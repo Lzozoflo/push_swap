@@ -3,7 +3,7 @@
 NAME			=		push_swap
 NAME_LIB		=		./libft/libft.a
 CC				=		cc
-FLAGS			=		-Wall -Wextra -Werror -MMD -MP
+CFLAGS			=		-Wall -Wextra -Werror -MMD -MP
 RM				=		rm -fr
 AR				=		ar -rcs
 
@@ -26,9 +26,10 @@ RESET			=		\033[0m
 # Directories
 D_SRC			=		src/
 D_OBJ			=		object/
+D_INC			=		inc/
 
-
-D_INC_LIBFT		=		./libft/inc/
+# Source Directories
+D_INSTRUC		=		instructions/
 
 
 #############################################################################################
@@ -38,10 +39,17 @@ D_INC_LIBFT		=		./libft/inc/
 #############################################################################################
 
 
-INC				=		libft.h
+INC				=		push_swap.h
 
 
-SRC		=		ft_parting.c
+SRC				=		main.c						\
+						ft_creat_stack_utils.c
+
+
+SRC_INSTRUC		=		ft_swap.c					\
+						ft_push.c					\
+						ft_rotate.c					\
+						ft_reverse_rotate.c
 
 
 #############################################################################################
@@ -52,7 +60,9 @@ SRC		=		ft_parting.c
 
 
 # All src in his Src Directories
-SRCS			=		$(addprefix $(D_SRC), $(SRC))
+SRCS			=		$(addprefix $(D_SRC), $(SRC))						\
+						$(addprefix $(D_SRC)$(D_INSTRUC), $(SRC_INSTRUC))
+
 
 # Changing all source directories to object directories
 OBJS			=		$(subst $(D_SRC), $(D_OBJ), $(SRCS:.c=.o))
@@ -64,23 +74,35 @@ INCS			=		$(addprefix $(D_INC), $(INC))
 
 #############################################################################################
 #																							#
+#										// LIBFT											#
+#																							#
+#############################################################################################
+
+D_INC_LIBFT		=		./libft/inc/
+
+INC_LIBFT		=		libft.h
+
+
+#############################################################################################
+#																							#
 #										// COMPILATION										#
 #																							#
 #############################################################################################
 
 
-all				:	$(NAME) $(D_OBJ)
+all				:	lib $(NAME) $(D_OBJ)
 
 
 $(NAME)			:	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(NAME_LIB) -o $(NAME)
 
 
-$(D_OBJ)%.o		: 	 $(D_SRC)%.c Makefile lib
-			@mkdir -p $(D_OBJ)
-			$(CC) $(CFLAGS) -c $< -o $@ -I $(D_INC_LIBFT)
+$(D_OBJ)%.o		:	$(D_SRC)%.c $(INCS) Makefile
+			@mkdir -p $(dir $@)
+			$(CC) $(CFLAGS) -c $< -o $@ -I $(D_INC) -I $(D_INC_LIBFT)
 
-lib			:
+
+lib				:
 			$(MAKE) -C libft
 
 

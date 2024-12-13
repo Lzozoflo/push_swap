@@ -64,7 +64,8 @@ SRC_LST			=		ft_lstadd_back.c	\
 						ft_lstsize.c
 
 
-SRC_MEM			=		ft_memchr.c			\
+SRC_MEM			=		ft_atoi_alloc.c		\
+						ft_memchr.c			\
 						ft_memcmp.c			\
 						ft_memcpy.c			\
 						ft_memmove.c		\
@@ -183,4 +184,5 @@ fclear			:	fclean
 #to see what variables did
 debug			:
 	@echo "Debug: $(all)"
- -include $(DEPS)
+
+-include $(DEPS)

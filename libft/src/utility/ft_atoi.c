@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:49:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/26 13:58:20 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/12 17:13:16 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 /**
  * @brief Converts a string to an integer.
- * 
+ *
  * The function `ft_atoi` takes a string as input and converts the numeric
- * part of the string into an integer of type `int`. It ignores leading 
- * whitespace, handles the signs (+/-), and stops when a non-numeric character 
+ * part of the string into an integer of type `int`. It ignores leading
+ * whitespace, handles the signs (+/-), and stops when a non-numeric character
  * is encountered.
- * 
+ *
  * @param str The string to convert to an integer.
- * 
+ *
  * @return int The resulting integer from the conversion of the string.
  *             Returns 0 if no digits are present.
  */
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	i;
-	int	res;
-	int	sign;
+	long int	res;
+	int			i;
+	int			sign;
 
 	i = 0;
 	res = 0;
