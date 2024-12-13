@@ -6,34 +6,42 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 07:35:50 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/13 11:33:18 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/13 17:54:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * @brief Moves the first element from stack b to stack a.
+ *        If stack b is empty, the function does nothing.
+ */
 void	ft_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
 	if (b && *b)
 	{
-		tmp = (*a);
-		(*a) = (*b);
+		tmp = *b;
 		*b = (*b)->next;
-		(*b)->next = tmp;
+		tmp->next = *a;
+		*a = tmp;
 	}
 }
 
+/**
+ * @brief Moves the first element from stack a to stack b.
+ *        If stack a is empty, the function does nothing.
+ */
 void	ft_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
 	if (a && *a)
 	{
-		tmp = (*b);
-		(*b) = (*a);
+		tmp = *a;
 		*a = (*a)->next;
-		(*a)->next = tmp;
+		tmp->next = *b;
+		*b = tmp;
 	}
 }

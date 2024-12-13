@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   pre_sorting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 07:28:29 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/13 15:57:07 by fcretin          ###   ########.fr       */
+/*   Created: 2024/12/13 17:47:01 by fcretin           #+#    #+#             */
+/*   Updated: 2024/12/13 18:17:54 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sa(t_stack **a)
+void	ft_isneg(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
+	int	len;
 
-	if (a && *a && (*a)->next)
+	len = ft_push_lstsize(*a);
+	while (len > 0)
 	{
-		tmp = *a;
-		*a = (*a)->next;
-		tmp->next = (*a)->next;
-		(*a)->next = tmp;
+		if ((*a)->content < 0)
+			ft_pb(a, b);
+		else
+			ft_ra(a);
+		len--;
 	}
 }
 
-void	ft_sb(t_stack **b)
-{
-	t_stack	*tmp;
+// void ft_idk(void)
+// {
 
-	if (b && *b && (*b)->next)
-	{
-		tmp = *b;
-		*b = (*b)->next;
-		tmp->next = (*b)->next;
-		(*b)->next = tmp;
-	}
-}
+// }
 
-void	ft_ss(t_stack **a, t_stack **b)
-{
-	ft_sa(a);
-	ft_sb(b);
-}
+// void ft_idk(void)
+// {
+
+// }
+
+// void ft_idk(void)
+// {
+
+// }
+
+// void ft_idk(void)
+// {
+
+// }

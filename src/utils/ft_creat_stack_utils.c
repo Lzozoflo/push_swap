@@ -6,11 +6,35 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:00:40 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/13 11:36:12 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/13 18:00:01 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_push_lstadd_front(t_stack **lst, t_stack *new)
+{
+	if (!new || !lst)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}
+
+// void	ft_push_lstadd_back(t_stack **lst, t_stack *new)
+// {
+// 	t_stack	*tmp;
+
+// 	tmp = NULL;
+// 	if (!new)
+// 		return ;
+// 	if (*lst == NULL)
+// 		*lst = new;
+// 	else
+// 	{
+// 		tmp = ft_push_lstlast(*lst);
+// 		tmp->next = new;
+// 	}
+// }
 
 t_stack	*ft_push_lstnew(long int content)
 {
@@ -29,19 +53,13 @@ t_stack	*ft_push_lstnew(long int content)
 	return (node);
 }
 
-void	ft_push_lstaddback(t_stack **lst, t_stack *new)
+t_stack	*ft_push_lstlast(t_stack *lst)
 {
-	t_stack	*tmp;
-
-	if (!new)
-		return ;
-	if (*lst == NULL)
-		*lst = new;
-	else
-	{
-		tmp = ft_push_lstlast(*lst);
-		tmp->next = new;
-	}
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
 void	ft_push_lstclear(t_stack **lst, void (*del)(int))
@@ -58,15 +76,6 @@ void	ft_push_lstclear(t_stack **lst, void (*del)(int))
 		*lst = tmplst;
 	}
 	*lst = NULL;
-}
-
-t_stack	*ft_push_lstlast(t_stack *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
 }
 
 int	ft_push_lstsize(t_stack *lst)
