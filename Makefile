@@ -31,6 +31,8 @@ D_INC			=		inc/
 # Source Directories
 D_INSTRUC		=		instructions/
 D_UTILIS		=		utils/
+D_SORT			=		sort/
+
 
 #############################################################################################
 #																							#
@@ -43,16 +45,20 @@ INC				=		push_swap.h
 
 
 SRC				=		main.c\
-						pre_sorting.c
-
-
-SRC_UTILIS		=		ft_creat_stack_utils.c
-
+						test.c
 
 SRC_INSTRUC		=		ft_swap.c					\
 						ft_push.c					\
 						ft_rotate.c					\
 						ft_reverse_rotate.c
+
+SRC_SORT		=		ft_three_four_five.c		\
+						ft_three_four_five_utils.c	\
+						pre_sorting.c
+
+SRC_UTILIS		=		ft_creat_stack_utils.c
+
+
 
 
 #############################################################################################
@@ -65,7 +71,8 @@ SRC_INSTRUC		=		ft_swap.c					\
 # All src in his Src Directories
 SRCS			=		$(addprefix $(D_SRC), $(SRC))						\
 						$(addprefix $(D_SRC)$(D_INSTRUC), $(SRC_INSTRUC))	\
-						$(addprefix $(D_SRC)$(D_UTILIS), $(SRC_UTILIS))
+						$(addprefix $(D_SRC)$(D_UTILIS), $(SRC_UTILIS))		\
+						$(addprefix $(D_SRC)$(D_SORT), $(SRC_SORT))
 
 
 # Changing all source directories to object directories

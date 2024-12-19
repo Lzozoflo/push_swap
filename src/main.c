@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/13 18:54:06 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/19 19:02:41 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,38 @@ static int	ft_av_correct_input(int ac, char **av)
 	return (1);
 }
 
-static int	ft_cheak_dup(int)
+static int	ft_cheak_dup(t_stack **head, char *tab)
 {
+	t_stack	*node;
+	t_stack	*tmp;
 
+	tmp = *head;
+	node = ft_push_new(tab);
+	if (!node)
+	{
+		if (head)
+			ft_push_clear(head, &ft_delete_content);
+		return (0);
+	}
+	while (tmp)
+	{
+		if (tmp->content == node->content)
+		{
+			ft_push_clear(head, &ft_delete_content);
+			return (0);
+		}
+		tmp = tmp->next;
+	}
+	ft_push_add_front(head, node);
+	return (1);
 }
 
 static t_stack	**ft_creat_stack(int ac, char **av, t_stack	**head)
 {
-	t_stack	*node;
-	char	**tab;
 	int		i;
+	char	**tab;
 
+	tab = NULL;
 	while (--ac > 0)
 	{
 		tab = ft_split(av[ac], ' ');
@@ -73,18 +94,15 @@ static t_stack	**ft_creat_stack(int ac, char **av, t_stack	**head)
 		i = 0;
 		while (tab[i])
 		{
-					node = ft_push_lstnew(ft_atoi(tab[i++]));
-					if (!node)
-					{
-						if (head)
-							ft_push_lstclear(head, &ft_delete_content);
-						ft_free_the_malloc(tab, 0);
-						return (NULL);
-					}
-					ft_push_lstadd_front(head, node);
+			if (!ft_cheak_dup(head, tab[i++]))
+			{
+				ft_free_the_malloc(tab, 0);
+				return (NULL);
+			}
 		}
 		ft_free_the_malloc(tab, 0);
 	}
+	// ft_add_pos(*head);
 	return (head);
 }
 
@@ -92,35 +110,27 @@ int	main(int ac, char **av)
 {
 	t_stack	*head_a;
 	t_stack *head_b;
-	t_stack	*tmp;
 
 	head_a = NULL;
 	head_b = NULL;
 	if (!ft_av_correct_input(ac, av))
 		return (1);
-	ft_creat_stack(ac, av, &head_a);
-	if (!head_a)
+	if (!ft_creat_stack(ac, av, &head_a))
 		return (1);
-	tmp = head_a;
-	while (tmp)
-	{
-		printf("ad : %d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	ft_pre_sorting();
-	ft_isneg(&head_a, &head_b);
-	tmp = head_a;
-	printf("\npre_sorting\n\n");
-	while (tmp)
-	{
-		printf("ap A : %d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	tmp = head_b;
-	while (tmp)
-	{
-		printf("ap B : %d\n",tmp->content);
-		tmp = tmp->next;
-	}
+	test_to_print_lst(&head_a, &head_b);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	return (0);
 }

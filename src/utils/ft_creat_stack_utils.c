@@ -6,13 +6,14 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:00:40 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/13 18:00:01 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/17 12:26:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
 
-void	ft_push_lstadd_front(t_stack **lst, t_stack *new)
+void	ft_push_add_front(t_stack **lst, t_stack *new)
 {
 	if (!new || !lst)
 		return ;
@@ -20,7 +21,7 @@ void	ft_push_lstadd_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
-// void	ft_push_lstadd_back(t_stack **lst, t_stack *new)
+// void	ft_push_add_back(t_stack **lst, t_stack *new)
 // {
 // 	t_stack	*tmp;
 
@@ -36,11 +37,13 @@ void	ft_push_lstadd_front(t_stack **lst, t_stack *new)
 // 	}
 // }
 
-t_stack	*ft_push_lstnew(long int content)
+t_stack	*ft_push_new(char *str)
 {
 	t_stack	*node;
+	int		content;
 
-	if (content > INT_MAX || content < INT_MIN)
+	content = ft_atoi(str);
+	if (content != ft_atol(str))
 	{
 		write(2, "Error\n", 6);
 		return (NULL);
@@ -53,7 +56,7 @@ t_stack	*ft_push_lstnew(long int content)
 	return (node);
 }
 
-t_stack	*ft_push_lstlast(t_stack *lst)
+t_stack	*ft_push_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -62,7 +65,7 @@ t_stack	*ft_push_lstlast(t_stack *lst)
 	return (lst);
 }
 
-void	ft_push_lstclear(t_stack **lst, void (*del)(int))
+void	ft_push_clear(t_stack **lst, void (*del)(int))
 {
 	t_stack	*tmplst;
 
@@ -78,7 +81,7 @@ void	ft_push_lstclear(t_stack **lst, void (*del)(int))
 	*lst = NULL;
 }
 
-int	ft_push_lstsize(t_stack *lst)
+int	ft_push_size(t_stack *lst)
 {
 	int	i;
 

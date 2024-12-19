@@ -144,7 +144,7 @@ $(NAME)			:	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 
-$(D_OBJ)%.o	: 	 $(D_SRC)%.c $(INCS) Makefile
+$(D_OBJ)%.o		: 	 $(D_SRC)%.c $(INCS) Makefile
 			@mkdir -p $(dir $@)
 			$(CC) $(CFLAGS) -c $< -o $@ -I $(D_INC)
 
