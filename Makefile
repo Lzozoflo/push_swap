@@ -25,7 +25,7 @@ RESET			=		\033[0m
 
 # Directories
 D_SRC			=		src/
-D_OBJ			=		object/
+D_OBJ			=		1object/
 D_INC			=		inc/
 
 # Source Directories
@@ -54,7 +54,7 @@ SRC_INSTRUC		=		ft_swap.c					\
 
 SRC_SORT		=		ft_three_four_five.c		\
 						ft_three_four_five_utils.c	\
-						pre_sorting.c
+						ft_med_sorting.c
 
 SRC_UTILIS		=		ft_creat_stack_utils.c
 

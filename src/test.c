@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:42:55 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:14:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 11:30:18 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,12 @@ void test_to_print_lst(t_stack	**head_a, t_stack **head_b)
 	t_stack *tmp;
 
 	tmp = *head_a;
-	printf("Before");
 	ft_print_two_stack(*head_a, *head_b);
 
-	printf("\n");
+	printf("\n---Before pre_sorting---\n");
 	ft_sort(head_a, head_b);
-	// (void)head_b;
-	tmp = *head_a;
-	// printf("\npre_sorting\n\n");
-	// printf("ptr : %p\n", *head_a);
-	// printf("ptr : %p\n\n", tmp);
+	printf("\n---After pre_sorting---\n");
 
-	printf("\n\nAfter");
 	ft_print_two_stack(*head_a, *head_b);
 }
 

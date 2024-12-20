@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:19:24 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:32:27 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 11:26:48 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,14 @@ void	ft_sort(t_stack **a, t_stack **b)
 
 
 	len = ft_push_size(*a);
-	// printf("len : %d\n", len);
 	ft_pre_sort(a, b);
 	while (len > 5)
 	{
 		len = ft_push_size(*a);
-		// printf("len : %d", len);
 		if (len < 6)
 		{
 			ft_little_sort(a, b, len);
-			break;
+			break ;
 		}
 		ft_pre_sort(a, b);
 	}
