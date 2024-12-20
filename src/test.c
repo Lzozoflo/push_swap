@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:42:55 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:14:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 10:10:39 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,33 @@ void	ft_print_stack(t_stack *stack)
 
 void	ft_print_two_stack(t_stack *a, t_stack *b)
 {
-	printf("\nStack A\t:\t");
+	printf("\n--->	Stack A\t:\t");
 	ft_print_stack(a);
-	printf("\nStack B\t:\t");
+	printf("\n--->	Stack B\t:\t");
 	ft_print_stack(b);
 }
 
-
-void test_to_print_lst(t_stack	**head_a, t_stack **head_b)
+int	is_sorted(t_stack *stack)
 {
-	t_stack *tmp;
+	while (stack->next != NULL)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
 
-	tmp = *head_a;
+int test_to_print_lst(t_stack	**head_a, t_stack **head_b)
+{
+
 	printf("Before");
 	ft_print_two_stack(*head_a, *head_b);
-
 	printf("\n");
-	ft_sort(head_a, head_b);
-	// (void)head_b;
-	tmp = *head_a;
-	// printf("\npre_sorting\n\n");
-	// printf("ptr : %p\n", *head_a);
-	// printf("ptr : %p\n\n", tmp);
+	ft_pre_sort(head_a, head_b);
+	ft_print_two_stack(*head_a, *head_b);// one sort
+	ft_idk(void);
 
-	printf("\n\nAfter");
-	ft_print_two_stack(*head_a, *head_b);
+	return (is_sorted(*head_a));
 }
 

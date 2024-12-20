@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:15:11 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 10:16:00 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,25 @@
 # include <unistd.h>
 # include <limits.h>
 
+
 typedef struct s_stack
 {
+	t_stack	**head_a;
+	t_stack	**head_b;
+	int		size_a;
+	int		size_b;
+	int		mv;
+}				t_stack;
+
+typedef struct s_stack
+{
+	struct s_stack	*prev;
 	int				content;
-	int				size;
 	struct s_stack	*next;
-}					t_stack;
+}				t_stack;
 
 //trash fonction
-void	test_to_print_lst(t_stack	**head_a, t_stack **head_b);
+int	test_to_print_lst(t_stack	**head_a, t_stack **head_b);
 void	ft_print_two_stack(t_stack *a, t_stack *b);
 
 // swap instructions Directorie
@@ -55,15 +65,16 @@ void	ft_push_clear(t_stack **lst, void (*del)(int));
 int		ft_push_size(t_stack *lst);
 
 // sort Directorie
+int		ft_find_med(t_stack *stack, int target);
+int		ft_find_median(t_stack *stack, int len);
+void	ft_med_sort_a(t_stack **a, t_stack **b);
+
+// void	ft_med_sort_b(t_stack **a, t_stack **b);
+
 int		ft_find_index_min(t_stack *a, int *index_min);
 void	ft_find_index_second_min(t_stack *a, int min1, int *index_min);
 void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
-void	ft_sort_three(t_stack **a);
-void	ft_sort_four(t_stack **a, t_stack **b);
-void	ft_sort_five(t_stack **a, t_stack **b);
 void	ft_little_sort(t_stack **a, t_stack **b, int len);
 void	ft_pre_sort(t_stack **a, t_stack **b);
-void	ft_sort(t_stack **a, t_stack **b);
-
 
 #endif

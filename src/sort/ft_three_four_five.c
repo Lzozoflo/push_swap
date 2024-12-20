@@ -6,14 +6,14 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:19:24 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:32:27 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 09:35:51 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-void	ft_sort_three(t_stack **a)
+static void	ft_sort_three(t_stack **a)
 {
 	if ((*a)->content < (*a)->next->content
 		&& (*a)->next->content < (*a)->next->next->content)
@@ -41,7 +41,7 @@ void	ft_sort_three(t_stack **a)
 	}
 }
 
-void	ft_sort_four(t_stack **a, t_stack **b)
+static void	ft_sort_four(t_stack **a, t_stack **b)
 {
 	int	min1;
 	int	index_1;
@@ -52,7 +52,7 @@ void	ft_sort_four(t_stack **a, t_stack **b)
 	ft_pa(a, b, 1);
 }
 
-void	ft_sort_five(t_stack **a, t_stack **b)
+static void	ft_sort_five(t_stack **a, t_stack **b)
 {
 	int	min1;
 	int	index_1;
@@ -81,25 +81,34 @@ void	ft_little_sort(t_stack **a, t_stack **b, int len)
 		ft_sort_five(a, b);
 }
 
-void	ft_sort(t_stack **a, t_stack **b)
+void	ft_pre_sort(t_stack **a, t_stack **b)
 {
 	int	len;
 
-
 	len = ft_push_size(*a);
-	// printf("len : %d\n", len);
-	ft_pre_sort(a, b);
+	printf("\n-------------Start pre_sorting-------------\n\n");
+	ft_med_sort_a(a, b);
+	// ft_med_sort_b(a, b);
 	while (len > 5)
 	{
 		len = ft_push_size(*a);
-		// printf("len : %d", len);
 		if (len < 6)
-		{
-			ft_little_sort(a, b, len);
-			break;
-		}
-		ft_pre_sort(a, b);
+			break ;
+		ft_med_sort_a(a, b);
 	}
-
-
+	ft_little_sort(a, b, len);
+	printf("\n-------------End pre_sorting-------------\n\n");
 }
+
+
+
+	// len = ft_push_size(*b);
+	// 	printf("hum %d",len);
+	// while (len > 5)
+	// {
+	// 	len = ft_push_size(*b);
+	// 	if (len < 6)
+	// 		break ;
+	// 	ft_med_sort_b(a, b);
+	// }
+	// ft_little_sort(a, b, len);

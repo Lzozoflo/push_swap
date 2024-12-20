@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:02:41 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 09:48:32 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ int	main(int ac, char **av)
 		return (1);
 	if (!ft_creat_stack(ac, av, &head_a))
 		return (1);
-	test_to_print_lst(&head_a, &head_b);
 
 
 
@@ -132,5 +131,6 @@ int	main(int ac, char **av)
 
 
 
-	return (0);
+
+	return (test_to_print_lst(&head_a, &head_b));
 }
