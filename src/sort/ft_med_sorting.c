@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:47:01 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/20 11:28:46 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/20 11:33:25 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_stack	*ft_lst_find_below_median(t_stack *lst, int median)
 
 
 
-void	ft_pre_sort(t_stack **a, t_stack **b)
+void	ft_med_sort(t_stack **a, t_stack **b)
 {
 	int	len;
 	int	med;
