@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:42:55 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/20 11:35:12 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/04 12:07:38 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ft_print_two_stack(t_stack *a, t_stack *b)
 }
 
 
-void test_to_print_lst(t_stack	**head_a, t_stack **head_b)
+void	test_to_print_lst(t_stack	**head_a, t_stack **head_b)
 {
-	t_stack *tmp;
+	int		len;
 
-	tmp = *head_a;
 	ft_print_two_stack(*head_a, *head_b);
 
-	ft_pre_sort(head_a, head_b);
+	len = ft_push_size(*head_a);
+	ft_pre_sort(head_a, head_b, len);
 
 	ft_print_two_stack(*head_a, *head_b);
 }

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/20 13:29:15 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/04 12:07:48 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_find_index_second_min(t_stack *a, int min1, int *index_min);
 void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
 void	ft_little_sort(t_stack **a, t_stack **b, int len);
 void	ft_med_sort(t_stack **a, t_stack **b);
-void	ft_pre_sort(t_stack **a, t_stack **b);
+void	ft_pre_sort(t_stack **a, t_stack **b, int len);
 
 
 #endif
