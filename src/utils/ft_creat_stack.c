@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:00:40 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/17 12:26:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/05 14:48:52 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ t_stack	*ft_push_new(char *str)
 	if (!node)
 		return (NULL);
 	node->content = content;
+	node->final_index = 0;
+	node->head_index = 0;
 	node->next = NULL;
 	return (node);
 }

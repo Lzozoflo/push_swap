@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 19:02:41 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/07 09:51:53 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static t_stack	**ft_creat_stack(int ac, char **av, t_stack	**head)
 		}
 		ft_free_the_malloc(tab, 0);
 	}
-	// ft_add_pos(*head);
+	ft_add_final_index(*head);
 	return (head);
 }
 
@@ -117,11 +117,10 @@ int	main(int ac, char **av)
 		return (1);
 	if (!ft_creat_stack(ac, av, &head_a))
 		return (1);
-	test_to_print_lst(&head_a, &head_b);
-
-
-
-
+	ft_print_two_stack(head_a, head_b);
+printf("bla");
+	ft_data_count(&head_a, &head_b);
+	ft_print_two_stack(head_a, head_b);
 
 
 

@@ -53,10 +53,12 @@ SRC_INSTRUC		=		ft_swap.c					\
 						ft_reverse_rotate.c
 
 SRC_SORT		=		ft_three_four_five.c		\
-						ft_three_four_five_utils.c	\
-						ft_med_sorting.c
+						ft_three_four_five_utils.c
 
-SRC_UTILIS		=		ft_creat_stack_utils.c
+SRC_UTILIS		=		ft_count_sort.c				\
+						ft_creat_data.c				\
+						ft_creat_stack.c			\
+						ft_final_head_index.c
 
 
 

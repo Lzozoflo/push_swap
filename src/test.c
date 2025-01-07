@@ -6,18 +6,34 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:42:55 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/20 11:35:12 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/07 09:32:07 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_print_data(t_data *data)
+{
+	t_data *tmp = data;
+	while (tmp)
+	{
+		printf("\ndata -> count : %d\n", data->count);
+		printf("data -> final_index_a : %d\n", data->final_index_a);
+		printf("data -> final_index_b : %d\n", data->final_index_b);
+		tmp = tmp->next;
+	}
+}
 
-void	ft_print_stack(t_stack *stack)
+void	ft_print_stack(t_stack *stack,int i)
 {
 	while (stack)
 	{
-		printf("%d -> ", stack->content);
+		if (i == 1)
+			printf("%d -> ", stack->content);
+		if (i == 2)
+			printf("%d -> ", stack->final_index);
+		if (i == 3)
+			printf("%d -> ", stack->head_index);
 		stack = stack->next;
 	}
 	printf("NULL\n");
@@ -25,10 +41,18 @@ void	ft_print_stack(t_stack *stack)
 
 void	ft_print_two_stack(t_stack *a, t_stack *b)
 {
-	printf("\nStack A\t:\t");
-	ft_print_stack(a);
-	printf("\nStack B\t:\t");
-	ft_print_stack(b);
+	printf("\nStack A content\t:\t");
+	ft_print_stack(a, 1);
+	printf("\nStack A final\t:\t");
+	ft_print_stack(a, 2);
+	printf("\nStack A head\t:\t");
+	ft_print_stack(a, 3);
+	printf("\n\nStack B content\t:\t");
+	ft_print_stack(b, 1);
+	printf("\nStack B final\t:\t");
+	ft_print_stack(b, 2);
+	printf("\nStack B head\t:\t");
+	ft_print_stack(b, 3);
 }
 
 
@@ -39,8 +63,8 @@ void test_to_print_lst(t_stack	**head_a, t_stack **head_b)
 	tmp = *head_a;
 	ft_print_two_stack(*head_a, *head_b);
 
-	ft_pre_sort(head_a, head_b);
+	// ft_pre_sort(head_a, head_b);
 
-	ft_print_two_stack(*head_a, *head_b);
+	// ft_print_two_stack(*head_a, *head_b);
 }
 
