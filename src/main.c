@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/07 09:51:53 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:02:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	main(int ac, char **av)
 	if (!ft_creat_stack(ac, av, &head_a))
 		return (1);
 	ft_print_two_stack(head_a, head_b);
-printf("bla");
+	// fonction qui trouve le count le moins haut et free le reste
 	ft_data_count(&head_a, &head_b);
 	ft_print_two_stack(head_a, head_b);
 

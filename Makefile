@@ -3,7 +3,10 @@
 NAME			=		push_swap
 NAME_LIB		=		./libft/libft.a
 CC				=		cc
-CFLAGS			=		-Wall -Wextra -Werror -MMD -MP
+FLAGS			=		-Wall -Wextra -Werror -MMD -MP
+CFLAGSS			=		-Weverything
+NPD				=		--no-print-directory
+MAKE			:=		$(MAKE) -j $(NPD)
 RM				=		rm -fr
 AR				=		ar -rcs
 
@@ -58,7 +61,8 @@ SRC_SORT		=		ft_three_four_five.c		\
 SRC_UTILIS		=		ft_count_sort.c				\
 						ft_creat_data.c				\
 						ft_creat_stack.c			\
-						ft_final_head_index.c
+						ft_final_index.c			\
+						ft_head_index.c
 
 
 
@@ -103,8 +107,9 @@ INC_LIBFT		=		libft.h
 #############################################################################################
 
 
-all				:	lib $(NAME) $(D_OBJ)
-
+all				:	lib
+			$(MAKE) $(NAME)
+			$(MAKE) $(D_OBJ)
 
 $(NAME)			:	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(NAME_LIB) -o $(NAME)
@@ -153,5 +158,6 @@ fclear			:	fclean
 
 #to see what variables did
 debug			:
-	@echo "Debug: $(all)"
+	make all CFLAGS=$(CFLAGSS)
+
  -include $(DEPS)

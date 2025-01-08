@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/07 09:32:22 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/08 19:02:55 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,24 @@ typedef struct s_stack
 	int				content;
 	int				final_index;
 	int				head_index;
+	int				top_bottom;
 	struct s_stack	*next;
 }					t_stack;
+
 typedef struct s_data
 {
+	int				count;
 	int				final_index_a;
 	int				final_index_b;
-	int				count;
 	struct s_data	*next;
 }					t_data;
 
 //trash fonction
 void	test_to_print_lst(t_stack	**head_a, t_stack **head_b);
 void	ft_print_two_stack(t_stack *a, t_stack *b);
-void	ft_print_data(t_data *data);
+void	ft_print_data(t_data data);
+void	ft_bcl_p_data(t_data *data);
+
 
 void	ft_data_count(t_stack **a, t_stack **b);
 
