@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 09:15:08 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:04:43 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ typedef struct s_stack
 typedef struct s_data
 {
 	int				count;
-	int				final_index_a;
-	int				final_index_b;
+	t_stack			*node_a;
+	t_stack			*node_b;
 	struct s_data	*next;
 }					t_data;
 
 //trash fonction
-void	test_to_print_lst(t_stack	**head_a, t_stack **head_b);
+void	ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b);
 void	ft_print_two_stack(t_stack *a, t_stack *b);
 void	ft_print_data(t_data data);
 void	ft_bcl_p_data(t_data *data);
@@ -48,13 +48,16 @@ void	ft_bcl_p_data(t_data *data);
 void	ft_sa(t_stack **a, int print);
 void	ft_sb(t_stack **b, int print);
 void	ft_ss(t_stack **a, t_stack **b);
+
 //		ft_push
 void	ft_pa(t_stack **a, t_stack **b, int print);
 void	ft_pb(t_stack **a, t_stack **b, int print);
+
 //		ft_rotate
 void	ft_ra(t_stack **a, int print);
 void	ft_rb(t_stack **b, int print);
 void	ft_rr(t_stack **a, t_stack **b);
+
 //		ft_reverse rotate
 void	ft_rra(t_stack **a, int print);
 void	ft_rrb(t_stack **b, int print);
@@ -63,6 +66,7 @@ void	ft_rrr(t_stack **a, t_stack **b);
 //----------------------------Directorie >>> .sort/
 //		ft_three_four_five
 void	ft_little_sort(t_stack **a, t_stack **b, int len);
+
 //		ft_turc_sort
 void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
 
@@ -84,6 +88,10 @@ int		ft_push_size(t_stack *lst);
 
 //		ft_final_index
 void	ft_add_final_index(t_stack *lst);
+
+//		ft_free
+void	ft_free_except_smallest(t_data **data, t_data *the_smallest);
+int		ft_free_stack(t_stack **head, int error);
 
 //		ft_head_index
 void	ft_add_utils(t_stack *a, t_stack *b);

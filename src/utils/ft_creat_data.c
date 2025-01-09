@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 17:54:29 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 09:40:48 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:10:38 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ t_data	*ft_data_new(void)
 	if (!new)
 		return (NULL);
 	new->count = INT_MAX;
-	new->final_index_a = -1;
-	new->final_index_b = -1;
+	new->node_a = NULL;
+	new->node_b = NULL;
 	new->next = NULL;
 	return (new);
 }

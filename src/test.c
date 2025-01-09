@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:42:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/08 17:16:10 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:47:14 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_print_data(t_data data)
 {
 		printf("\ndata -> count : %d\n", data.count);
-		printf("data -> final_index_a : %d\n", data.final_index_a);
-		printf("data -> final_index_b : %d\n", data.final_index_b);
+		printf("data -> final_index_a : %d\n", data.node_a->final_index);
+		printf("data -> final_index_b : %d\n", data.node_b->final_index);
 }
 
 void	ft_bcl_p_data(t_data *data)
@@ -69,7 +69,7 @@ void	ft_print_two_stack(t_stack *a, t_stack *b)
 }
 
 
-void test_to_print_lst(t_stack	**head_a, t_stack **head_b)
+void ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b)
 {
 	t_stack *tmp;
 

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 09:15:49 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:48:18 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,20 +116,19 @@ int	main(int ac, char **av)
 	if (!ft_av_correct_input(ac, av))
 		return (1);
 	if (!ft_creat_stack(ac, av, &head_a))
-		return (1);
+		return (ft_free_stack(&head_a, 1));
 	ft_print_two_stack(head_a, head_b);
-	// fonction qui trouve le count le moins haut et free le reste
 	ft_first_mouve(&head_a, &head_b);
-	ft_print_two_stack(head_a, head_b);
+	// fonction qui trouve le count le moins haut et free le reste
 
 
 
 
 
+	// ft_print_two_stack(head_a, head_b);
 
 
 
 
-
-	return (0);
+	return (ft_free_stack(&head_a, 0));
 }

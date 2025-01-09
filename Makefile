@@ -61,6 +61,7 @@ SRC_UTILIS		=		ft_count_sort.c				\
 						ft_creat_data.c				\
 						ft_creat_stack.c			\
 						ft_final_index.c			\
+						ft_free.c					\
 						ft_head_index.c				\
 						ft_three_four_five_utils.c
 
