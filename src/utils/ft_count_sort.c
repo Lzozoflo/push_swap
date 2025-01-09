@@ -6,11 +6,36 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:43:36 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/08 19:09:01 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/09 09:55:52 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_free_except_smallest(t_data **data, t_data *the_best)
+{
+	t_data	*tmp;
+	t_data	*prev;
+	t_data	*next;
+
+	tmp = data;
+	prev = NULL;
+	while (tmp)
+	{
+		next = tmp->next;
+		if (tmp == the_best)
+		{
+			if (!prev)
+				*data = tmp; // Mettre à jour la tête si nécessaire
+			else
+				prev->next = tmp; // Relier les nœuds correctement
+		}
+		else
+			free(tmp);
+		tmp = next;
+	}
+	the_best->next = NULL;
+}
 
 static void	ft_find_head_higher_min(t_stack node_a, t_stack *b, t_data *data)
 {
@@ -31,7 +56,7 @@ static void	ft_find_head_higher_min(t_stack node_a, t_stack *b, t_data *data)
 
 static void	ft_one_to_max(t_stack node_a, t_stack *b, t_data *data)
 {
-	t_stack tmp;
+	t_stack	tmp;
 
 	tmp = *b;
 	b = b->next;
@@ -53,12 +78,6 @@ t_data	*ft_smallest_count(t_stack **a, t_stack **b)
 	t_data	*new;
 
 	head = NULL;
-	ft_pb(a, b, 0);
-	ft_pb(a, b, 0);
-	ft_pb(a, b, 0);
-	// ft_pb(a, b, 0);
-	// ft_pb(a, b, 0);
-	// ft_pb(a, b, 0);
 	tmp_a = *a;
 	ft_add_utils(*a, *b);
 	while (tmp_a)
@@ -71,16 +90,5 @@ t_data	*ft_smallest_count(t_stack **a, t_stack **b)
 		ft_data_add_back(&head, new);
 		tmp_a = tmp_a->next;
 	}
-	// ft_print_data(*new);
 	return (head);
 }
-
-void	ft_data_count(t_stack **a, t_stack **b)
-{
-	t_data	*head;
-
-	head = ft_smallest_count(a, b);
-	// ft_bcl_p_data(head);
-}
-
-

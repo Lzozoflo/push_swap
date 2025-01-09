@@ -46,7 +46,6 @@ D_SORT			=		sort/
 
 INC				=		push_swap.h
 
-
 SRC				=		main.c\
 						test.c
 
@@ -56,15 +55,14 @@ SRC_INSTRUC		=		ft_swap.c					\
 						ft_reverse_rotate.c
 
 SRC_SORT		=		ft_three_four_five.c		\
-						ft_three_four_five_utils.c
+						ft_turc_sort.c
 
 SRC_UTILIS		=		ft_count_sort.c				\
 						ft_creat_data.c				\
 						ft_creat_stack.c			\
 						ft_final_index.c			\
-						ft_head_index.c
-
-
+						ft_head_index.c				\
+						ft_three_four_five_utils.c
 
 
 #############################################################################################
