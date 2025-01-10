@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 17:48:18 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/10 09:13:45 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ static t_stack	**ft_creat_stack(int ac, char **av, t_stack	**head)
 int	main(int ac, char **av)
 {
 	t_stack	*head_a;
-	t_stack *head_b;
+	t_stack	*head_b;
 
 	head_a = NULL;
 	head_b = NULL;
@@ -125,7 +125,7 @@ int	main(int ac, char **av)
 
 
 
-	// ft_print_two_stack(head_a, head_b);
+	ft_print_two_stack(head_a, head_b);
 
 
 

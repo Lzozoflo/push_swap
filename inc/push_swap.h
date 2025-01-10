@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 17:04:43 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/10 16:49:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	int				content;
 	int				final_index;
 	int				head_index;
-	int				top_bottom;
+	int				top_bot;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -58,22 +58,29 @@ void	ft_ra(t_stack **a, int print);
 void	ft_rb(t_stack **b, int print);
 void	ft_rr(t_stack **a, t_stack **b);
 
-//		ft_reverse rotate
+//		ft_reverse_rotate
 void	ft_rra(t_stack **a, int print);
 void	ft_rrb(t_stack **b, int print);
 void	ft_rrr(t_stack **a, t_stack **b);
 
+//		ft_while_rotate
+void	ft_while_ra(t_stack **a, t_data **data);
+void	ft_while_rb(t_stack **b, t_data **data);
+void	ft_while_rra(t_stack **a, t_data **data);
+void	ft_while_rrb(t_stack **b, t_data **data);
+
 //----------------------------Directorie >>> .sort/
 //		ft_three_four_five
 void	ft_little_sort(t_stack **a, t_stack **b, int len);
+void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
 
 //		ft_turc_sort
-void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
+void	ft_first_mouve(t_stack **a, t_stack **b);
 
 //----------------------------Directorie >>> .utils/
 //		ft_count_sort
 t_data	*ft_smallest_count(t_stack **a, t_stack **b);
-void	ft_first_mouve(t_stack **a, t_stack **b);
+void	ft_the_smallest(t_data **data);
 
 //		ft_creat_data
 t_data	*ft_data_new(void);

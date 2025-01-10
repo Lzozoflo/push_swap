@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:43:36 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 17:57:37 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/10 08:36:48 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 static void	ft_find_head_higher_min(t_stack *node_a, t_stack *b, t_data *data)
 {
+	data->count = node_a->head_index + b->head_index;
+	data->node_a = node_a;
+	data->node_b = b;
+	b = b->next;
 	while (b)
 	{
 		if (b->final_index < node_a->final_index)
 		{
-			// if (b->final_index >= data->node_b->final_index)
-			// {
-			// 	data->count = node_a->head_index + b->head_index;
-			// 	data->node_a = node_a;
-			// 	data->node_b = b;
-			// }
+			if (b->final_index >= data->node_b->final_index)
+			{
+				data->count = node_a->head_index + b->head_index;
+				data->node_a = node_a;
+				data->node_b = b;
+			}
 		}
 		b = b->next;
 	}
@@ -66,4 +70,21 @@ t_data	*ft_smallest_count(t_stack **a, t_stack **b)
 		tmp_a = tmp_a->next;
 	}
 	return (head);
+}
+
+void	ft_the_smallest(t_data **data)
+{
+	t_data	*the_smallest;
+	t_data	*tmp;
+
+	the_smallest = *data;
+	tmp = (*data)->next;
+	while (tmp)
+	{
+		if (tmp->count < the_smallest->count)
+			the_smallest = tmp;
+		tmp = tmp->next;
+	}
+	ft_free_except_smallest(data, the_smallest);
+	*data = the_smallest;
 }

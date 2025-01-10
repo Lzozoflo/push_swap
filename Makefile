@@ -49,10 +49,12 @@ INC				=		push_swap.h
 SRC				=		main.c\
 						test.c
 
-SRC_INSTRUC		=		ft_swap.c					\
-						ft_push.c					\
+SRC_INSTRUC		=		ft_push.c					\
+						ft_reverse_rotate.c			\
 						ft_rotate.c					\
-						ft_reverse_rotate.c
+						ft_swap.c					\
+						ft_while_reverse_rotate		\
+						ft_while_rotate.c
 
 SRC_SORT		=		ft_three_four_five.c		\
 						ft_turc_sort.c
@@ -63,7 +65,8 @@ SRC_UTILIS		=		ft_count_sort.c				\
 						ft_final_index.c			\
 						ft_free.c					\
 						ft_head_index.c				\
-						ft_three_four_five_utils.c
+						ft_three_four_five_utils.c	\
+						ft_turc_sort_utils.c
 
 
 #############################################################################################

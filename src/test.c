@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 07:42:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 17:47:14 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/10 08:55:27 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_print_stack(t_stack *stack,int i)
 		if (i == 3)
 			printf("%d -> ", stack->head_index);
 		if (i == 4)
-			printf("%d -> ", stack->top_bottom);
+			printf("%d -> ", stack->top_bot);
 		stack = stack->next;
 	}
 	printf("NULL\n");

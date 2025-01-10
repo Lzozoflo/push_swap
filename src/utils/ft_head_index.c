@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 11:08:02 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/08 19:06:37 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/10 09:14:20 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ static void	ft_ahia(t_stack *lst, int size, int *i)
 	if (size % 2 == 0)
 	{
 		lst->head_index = (*i)--;
-		lst->top_bottom = 0;
+		lst->top_bot = 0;
 	}
 	if (size % 2 == 1)
 	{
 		lst->head_index = --(*i);
-		lst->top_bottom = -1;
+		lst->top_bot = -1;
 	}
 }
 
@@ -38,7 +38,7 @@ static void	ft_add_head_index_a(t_stack *lst)
 	while (i <= med && lst)
 	{
 		lst->head_index = i++;
-		lst->top_bottom = 1;
+		lst->top_bot = 1;
 		lst = lst->next;
 	}
 	ft_ahia(lst, size, &i);
@@ -49,7 +49,7 @@ static void	ft_add_head_index_a(t_stack *lst)
 			lst->head_index = i--;
 		else
 			lst->head_index = --i;
-		lst->top_bottom = -1;
+		lst->top_bot = -1;
 		lst = lst->next;
 	}
 }
@@ -61,7 +61,7 @@ static void	ft_adib(t_stack *lst, int size, int *i)
 	if (size % 2 == 1)
 	{
 		lst->head_index = (*i);
-		lst->top_bottom = 1;
+		lst->top_bot = 1;
 	}
 }
 
@@ -77,7 +77,7 @@ static void	ft_add_head_index_b(t_stack *lst)
 	while (i < med && lst)
 	{
 		lst->head_index = i++;
-		lst->top_bottom = 1;
+		lst->top_bot = 1;
 		lst = lst->next;
 	}
 	ft_adib(lst, size, &i);
@@ -85,7 +85,7 @@ static void	ft_add_head_index_b(t_stack *lst)
 	while (lst != NULL)
 	{
 		lst->head_index = i--;
-		lst->top_bottom = -1;
+		lst->top_bot = -1;
 		lst = lst->next;
 	}
 }
