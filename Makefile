@@ -53,10 +53,11 @@ SRC_INSTRUC		=		ft_push.c					\
 						ft_reverse_rotate.c			\
 						ft_rotate.c					\
 						ft_swap.c					\
-						ft_while_reverse_rotate		\
+						ft_while_reverse_rotate.c	\
 						ft_while_rotate.c
 
-SRC_SORT		=		ft_three_four_five.c		\
+SRC_SORT		=		ft_last_move.c				\
+						ft_three_four_five.c		\
 						ft_turc_sort.c
 
 SRC_UTILIS		=		ft_count_sort.c				\

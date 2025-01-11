@@ -6,14 +6,14 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:19:24 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/05 09:37:02 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/11 15:37:27 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static void	ft_sort_three(t_stack **a)
+void	ft_sort_three(t_stack **a)
 {
 	if ((*a)->content < (*a)->next->content
 		&& (*a)->next->content < (*a)->next->next->content)
@@ -52,7 +52,7 @@ static void	ft_sort_four(t_stack **a, t_stack **b)
 	ft_pa(a, b, 1);
 }
 
-static void	ft_sort_five(t_stack **a, t_stack **b)
+void	ft_sort_five(t_stack **a, t_stack **b)
 {
 	int	min1;
 	int	index_1;
