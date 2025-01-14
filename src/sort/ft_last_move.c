@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:16:02 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/11 15:28:16 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/14 15:46:51 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_the_end(t_stack **a, t_stack **b)
 	last = ft_push_last(*a);
 	while (*b)
 	{
-		if (last->final_index - 1 == (*b)->final_index)
+		if (last->final_index - 1 >= (*b)->final_index
+			&& last->final_index - 4 <= (*b)->final_index)
 		{
 			ft_rra(a, 1);
 			last = ft_push_last(*a);
