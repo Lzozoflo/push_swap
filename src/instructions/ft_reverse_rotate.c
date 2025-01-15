@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 07:36:31 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/19 18:07:35 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 12:11:53 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_rrb(t_stack **b, int print)
 
 void	ft_rrr(t_stack **a, t_stack **b)
 {
-	ft_rra(a,0);
-	ft_rrb(b,0);
+	ft_rra(a, 0);
+	ft_rrb(b, 0);
 	ft_printf("rrr\n");
 }

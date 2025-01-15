@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/11 15:37:24 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 12:14:55 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b);
 void	ft_print_two_stack(t_stack *a, t_stack *b);
 void	ft_print_data(t_data data);
 void	ft_bcl_p_data(t_data *data);
-void	ft_the_end(t_stack **a, t_stack **b);
 
 //----------------------------Directorie >>> .instructions/
 //		ft_swap
@@ -74,6 +73,10 @@ void	ft_while_rra(t_stack **a, t_data **data);
 void	ft_while_rrb(t_stack **b, t_data **data);
 
 //----------------------------Directorie >>> .sort/
+//		ft_first_last_move
+void	ft_first_move(t_stack **a, t_stack **b);
+void	ft_the_end(t_stack **a, t_stack **b);
+
 //		ft_three_four_five
 void	ft_sort_three(t_stack **a);
 void	ft_sort_five(t_stack **a, t_stack **b);
@@ -81,7 +84,6 @@ void	ft_little_sort(t_stack **a, t_stack **b, int len);
 void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
 
 //		ft_turc_sort
-void	ft_first_move(t_stack **a, t_stack **b);
 void	ft_optimize_stack_rotation(t_stack **a, t_stack **b, t_data **data);
 void	ft_sort_to_b(t_stack **a, t_stack **b);
 
@@ -103,11 +105,13 @@ int		ft_push_size(t_stack *lst);
 
 //		ft_final_index
 void	ft_add_final_index(t_stack *lst);
+int		ft_min(t_stack *b);
 
 //		ft_free
 void	ft_free_except_smallest(t_data **data, t_data *the_smallest);
 int		ft_free_stack(t_stack **head, int error);
 void	ft_free_data(t_data **data);
+int		ft_free_all(t_stack **a, t_stack **b, t_data **data);
 
 //		ft_head_index
 void	ft_add_utils(t_stack *a, t_stack *b);
@@ -119,5 +123,6 @@ void	ft_find_index_second_min(t_stack *a, int min1, int *index_min);
 //		ft_turc_sort_utils
 int		ft_equal_or_not(t_stack **a, t_stack **b, t_data **data);
 void	ft_who_move(t_stack **a, t_stack **b, t_data **data, int the_way);
+t_stack	*ft_find_smaller(t_stack **b);
 
 #endif

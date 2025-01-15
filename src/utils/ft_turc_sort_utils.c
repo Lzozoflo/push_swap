@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:32:48 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/11 10:33:10 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 12:08:59 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,23 @@ void	ft_who_move(t_stack **a, t_stack **b, t_data **data, int the_way)
 		ft_r_or_rr_b(a, b, data, the_way);
 }
 
+t_stack	*ft_find_smaller(t_stack **b)
+{
+	t_stack	*tmp;
+	t_stack	*smaller;
+	int		i;
 
-
-// void	ft_idk(void)
-// {
-
-// }
+	smaller = NULL;
+	tmp = *b;
+	i = INT_MAX;
+	while (tmp)
+	{
+		if (tmp->final_index < i)
+		{
+			i = tmp->final_index;
+			smaller = tmp;
+		}
+		tmp = tmp->next;
+	}
+	return (smaller);
+}

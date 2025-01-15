@@ -46,8 +46,7 @@ D_SORT			=		sort/
 
 INC				=		push_swap.h
 
-SRC				=		main.c\
-						test.c
+SRC				=		main.c
 
 SRC_INSTRUC		=		ft_push.c					\
 						ft_reverse_rotate.c			\
@@ -56,7 +55,7 @@ SRC_INSTRUC		=		ft_push.c					\
 						ft_while_reverse_rotate.c	\
 						ft_while_rotate.c
 
-SRC_SORT		=		ft_last_move.c				\
+SRC_SORT		=		ft_first_last_move.c		\
 						ft_three_four_five.c		\
 						ft_turc_sort.c
 
@@ -136,11 +135,13 @@ lib				:
 
 clean 			:
 			$(RM) $(D_OBJ)
+			$(MAKE) -C libft clean
 
 
-fclean 			:	clean
+fclean 			:
 			$(RM) $(NAME)
-
+			$(RM) $(D_OBJ)
+			$(MAKE) -C libft fclean
 
 re 				:	 fclean all
 

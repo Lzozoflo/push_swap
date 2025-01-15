@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:15:41 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/11 13:35:19 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 09:33:20 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,12 @@ int	ft_free_stack(t_stack **head, int error)
 	}
 	*head = NULL;
 	return (error);
+}
+
+int	ft_free_all(t_stack **a, t_stack **b, t_data **data)
+{
+	ft_free_data(data);
+	ft_free_stack(b, 1);
+	ft_free_stack(a, 1);
+	return (0);
 }

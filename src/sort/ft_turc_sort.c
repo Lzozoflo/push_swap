@@ -6,50 +6,36 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:57:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/11 16:47:23 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 12:13:46 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_first_move(t_stack **a, t_stack **b)
+void	ft_small_head_index(t_stack *smaller, t_stack *max, t_stack **b)
 {
-	t_data	*data;
-
-	ft_pb(a, b, 1);
-	ft_pb(a, b, 1);
-	// ft_rb(b, 0);
-	// ft_pb(a, b, 0);
-	// ft_pb(a, b, 0);
-	// ft_rb(b, 0);
-	// ft_rb(b, 0);
-	// ft_pb(a, b, 0);
-	data = ft_smallest_count(a, b);
-	// ft_bcl_p_data(data);
-	ft_the_smallest(&data);
-	ft_optimize_stack_rotation(a, b, &data);
-	free(data);
+	while ((smaller->top_bot == 1 || smaller->top_bot == 0)
+		&& (*b)->final_index != max->final_index)
+	{
+		ft_rb(b, 1);
+	}
+	while (smaller->top_bot == -1 && (*b)->final_index != max->final_index)
+	{
+		ft_rrb(b, 1);
+	}
 }
 
-t_stack	*ft_find_smaller(t_stack **b)
+void	ft_max_head_index(t_stack *smaller, t_stack *max, t_stack **b)
 {
-	t_stack	*tmp;
-	t_stack	*smaller;
-	int		i;
-
-	smaller = NULL;
-	tmp = *b;
-	i = INT_MAX;
-	while (tmp)
+	while ((max->top_bot == 1 || max->top_bot == 0)
+		&& (*b)->final_index != max->final_index)
 	{
-		if (tmp->final_index < i)
-		{
-			i = tmp->final_index;
-			smaller = tmp;
-		}
-		tmp = tmp->next;
+		ft_rb(b, 1);
 	}
-	return (smaller);
+	while (max->top_bot == -1 && (*b)->final_index != max->final_index)
+	{
+		ft_rrb(b, 1);
+	}
 }
 
 void	ft_max_on_top(t_stack **b)
@@ -61,23 +47,15 @@ void	ft_max_on_top(t_stack **b)
 	if (smaller->next == NULL)
 		return ;
 	max = smaller->next;
-	if (smaller->head_index < smaller->next->head_index)
+	if (smaller->head_index <= max->head_index)
 	{
-		while ((smaller->top_bot == 1 || smaller->top_bot == 0)
-			&& (*b)->final_index != max->final_index)
-		{
-			ft_rb(b, 1);
-		}
+		ft_small_head_index(smaller, max, b);
 	}
 	else
 	{
-		while (smaller->top_bot == -1 && (*b)->final_index != max->final_index)
-		{
-			ft_rrb(b, 1);
-		}
+		ft_max_head_index(smaller, max, b);
 	}
 }
-
 
 void	ft_optimize_stack_rotation(t_stack **a, t_stack **b, t_data **data)
 {
@@ -119,8 +97,7 @@ void	ft_sort_to_b(t_stack **a, t_stack **b)
 		if (size_a == 4)
 			break ;
 	}
-	// ft_sort_five(a, b);
-	ft_sort_three(a);
+	ft_little_sort(a, b, size_a - 1);
 	ft_add_utils(*a, *b);
 	ft_max_on_top(b);
 }

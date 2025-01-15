@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:43:36 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/11 13:32:48 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 12:12:19 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	ft_find_head_higher_min(t_stack *node_a, t_stack *b, t_data *data)
 {
-
 	while (b)
 	{
 		if (b->final_index < node_a->final_index)
@@ -58,21 +57,18 @@ t_data	*ft_smallest_count(t_stack **a, t_stack **b)
 	t_stack	*tmp_a;
 	t_data	*head;
 	t_data	*new;
+	int		min_b;
 
 	head = NULL;
 	tmp_a = *a;
+	min_b = ft_min(*b);
 	ft_add_utils(*a, *b);
 	while (tmp_a)
 	{
 		new = ft_data_new();
 		if (!new)
-		{
-			ft_free_data(&head);
-			ft_free_stack(b, 1);
-			ft_free_stack(a, 1);
-			exit(0);
-		}
-		if (tmp_a->final_index != 1)
+			exit(ft_free_all(a, b, &head));
+		if (tmp_a->final_index > min_b)
 			ft_find_head_higher_min(tmp_a, *b, new);
 		else
 			ft_one_to_max(tmp_a, *b, new);
