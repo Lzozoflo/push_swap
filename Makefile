@@ -1,7 +1,6 @@
 .PHONY: all clean fclean re f fclear c clear lib
 
 NAME			=		push_swap
-NAME_LIB		=		./libft/libft.a
 CC				=		cc
 FLAGS			=		-Wall -Wextra -Werror -MMD -MP
 CFLAGSS			=		-Weverything
@@ -97,9 +96,11 @@ INCS			=		$(addprefix $(D_INC), $(INC))
 #																							#
 #############################################################################################
 
+
 D_INC_LIBFT		=		./libft/inc/
 
-INC_LIBFT		=		libft.h
+
+NAME_LIB		=		./libft/libft.a
 
 
 #############################################################################################

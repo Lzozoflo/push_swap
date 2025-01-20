@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 17:54:29 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/09 17:10:38 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:37:18 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,3 @@ void	ft_data_add_back(t_data **lst, t_data *new)
 		tmp->next = new;
 	}
 }
-
-// void	ft_data_clear(t_data **lst)
-// {
-// 	t_data	*tmplst;
-
-// 	if (!lst)
-// 		return ;
-// 	while (*lst)
-// 	{
-// 		tmplst = (*lst)->next;
-// 		del((*lst)->content);
-// 		free(*lst);
-// 		*lst = tmplst;
-// 	}
-// 	*lst = NULL;
-// }

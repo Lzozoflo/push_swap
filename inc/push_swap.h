@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 12:14:55 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:44:25 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	int				content;
 	int				final_index;
 	int				head_index;
-	int				top_bot;
+	int				pos;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -36,11 +36,11 @@ typedef struct s_data
 	struct s_data	*next;
 }					t_data;
 
-//trash fonction
-void	ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b);
-void	ft_print_two_stack(t_stack *a, t_stack *b);
-void	ft_print_data(t_data data);
-void	ft_bcl_p_data(t_data *data);
+// //trash fonction
+// void	ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b);
+// void	ft_print_two_stack(t_stack *a, t_stack *b);
+// void	ft_print_data(t_data data);
+// void	ft_bcl_p_data(t_data *data);
 
 //----------------------------Directorie >>> .instructions/
 //		ft_swap
@@ -75,7 +75,7 @@ void	ft_while_rrb(t_stack **b, t_data **data);
 //----------------------------Directorie >>> .sort/
 //		ft_first_last_move
 void	ft_first_move(t_stack **a, t_stack **b);
-void	ft_the_end(t_stack **a, t_stack **b);
+void	ft_last_move(t_stack **a, t_stack **b);
 
 //		ft_three_four_five
 void	ft_sort_three(t_stack **a);

@@ -6,39 +6,39 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:57:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 12:13:46 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:38:56 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_small_head_index(t_stack *smaller, t_stack *max, t_stack **b)
+static void	ft_small_head_index(t_stack *smaller, t_stack *max, t_stack **b)
 {
-	while ((smaller->top_bot == 1 || smaller->top_bot == 0)
+	while ((smaller->pos == 1 || smaller->pos == 0)
 		&& (*b)->final_index != max->final_index)
 	{
 		ft_rb(b, 1);
 	}
-	while (smaller->top_bot == -1 && (*b)->final_index != max->final_index)
+	while (smaller->pos == -1 && (*b)->final_index != max->final_index)
 	{
 		ft_rrb(b, 1);
 	}
 }
 
-void	ft_max_head_index(t_stack *smaller, t_stack *max, t_stack **b)
+static void	ft_max_head_index(t_stack *smaller, t_stack *max, t_stack **b)
 {
-	while ((max->top_bot == 1 || max->top_bot == 0)
+	while ((max->pos == 1 || max->pos == 0)
 		&& (*b)->final_index != max->final_index)
 	{
 		ft_rb(b, 1);
 	}
-	while (max->top_bot == -1 && (*b)->final_index != max->final_index)
+	while (max->pos == -1 && (*b)->final_index != max->final_index)
 	{
 		ft_rrb(b, 1);
 	}
 }
 
-void	ft_max_on_top(t_stack **b)
+static void	ft_max_on_top(t_stack **b)
 {
 	t_stack	*smaller;
 	t_stack	*max;
@@ -62,16 +62,16 @@ void	ft_optimize_stack_rotation(t_stack **a, t_stack **b, t_data **data)
 	int	top_bottom;
 
 	top_bottom = 0;
-	if ((*data)->node_a->top_bot == (*data)->node_b->top_bot)
+	if ((*data)->node_a->pos == (*data)->node_b->pos)
 	{
-		if ((*data)->node_a->top_bot == 1 || (*data)->node_a->top_bot == 0)
+		if ((*data)->node_a->pos == 1 || (*data)->node_a->pos == 0)
 			top_bottom = ft_while_rr(a, b, data);
 		else
 			top_bottom = ft_while_rrr(a, b, data);
 	}
-	else if ((*data)->node_a->top_bot == 0 || (*data)->node_b->top_bot == 0)
+	else if ((*data)->node_a->pos == 0 || (*data)->node_b->pos == 0)
 	{
-		if ((*data)->node_a->top_bot == 1 || (*data)->node_b->top_bot == 1)
+		if ((*data)->node_a->pos == 1 || (*data)->node_b->pos == 1)
 			top_bottom = ft_while_rr(a, b, data);
 		else
 			top_bottom = ft_while_rrr(a, b, data);

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:32:48 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 12:08:59 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:38:56 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,31 +23,31 @@ int	ft_equal_or_not(t_stack **a, t_stack **b, t_data **data)
 
 void	ft_r_or_rr_a(t_stack **a, t_stack **b, t_data **data, int the_way)
 {
-	if ((*data)->node_a->top_bot == 0)
+	if ((*data)->node_a->pos == 0)
 	{
 		if (the_way == 1)
 			ft_while_ra(a, data);
 		else
 			ft_while_rra(a, data);
 	}
-	else if ((*data)->node_a->top_bot == 1)
+	else if ((*data)->node_a->pos == 1)
 		ft_while_ra(a, data);
-	else if ((*data)->node_a->top_bot == -1)
+	else if ((*data)->node_a->pos == -1)
 		ft_while_rra(a, data);
 }
 
 void	ft_r_or_rr_b(t_stack **a, t_stack **b, t_data **data, int the_way)
 {
-	if ((*data)->node_b->top_bot == 0)
+	if ((*data)->node_b->pos == 0)
 	{
 		if (the_way == 1)
 			ft_while_rb(b, data);
 		else
 			ft_while_rrb(b, data);
 	}
-	else if ((*data)->node_b->top_bot == 1)
+	else if ((*data)->node_b->pos == 1)
 		ft_while_rb(b, data);
-	else if ((*data)->node_b->top_bot == -1)
+	else if ((*data)->node_b->pos == -1)
 		ft_while_rrb(b, data);
 }
 

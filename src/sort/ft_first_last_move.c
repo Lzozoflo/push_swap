@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 14:16:02 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 12:13:57 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:39:57 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_first_move(t_stack **a, t_stack **b)
 	free(data);
 }
 
-void	ft_the_end(t_stack **a, t_stack **b)
+void	ft_last_move(t_stack **a, t_stack **b)
 {
 	t_stack	*last;
 

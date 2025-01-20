@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:00:40 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/10 08:55:03 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:38:56 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,6 @@ void	ft_push_add_front(t_stack **lst, t_stack *new)
 	new->next = *lst;
 	*lst = new;
 }
-
-// void	ft_push_add_back(t_stack **lst, t_stack *new)
-// {
-// 	t_stack	*tmp;
-
-// 	tmp = NULL;
-// 	if (!new)
-// 		return ;
-// 	if (*lst == NULL)
-// 		*lst = new;
-// 	else
-// 	{
-// 		tmp = ft_push_lstlast(*lst);
-// 		tmp->next = new;
-// 	}
-// }
 
 t_stack	*ft_push_new(char *str)
 {
@@ -54,7 +38,7 @@ t_stack	*ft_push_new(char *str)
 	node->content = content;
 	node->final_index = 0;
 	node->head_index = 0;
-	node->top_bot = 0;
+	node->pos = 0;
 	node->next = NULL;
 	return (node);
 }
