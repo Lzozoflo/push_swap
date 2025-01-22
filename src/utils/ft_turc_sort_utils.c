@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:32:48 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/22 11:05:18 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 16:59:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_equal_or_not(t_stack **a, t_stack **b, t_data **data)
 	return (1);
 }
 
-void	ft_r_or_rr_a(t_stack **a, t_data **data, int the_way)
+static void	ft_r_or_rr_a(t_stack **a, t_data **data, int the_way)
 {
 	if ((*data)->node_a->pos == 0)
 	{
@@ -36,7 +36,7 @@ void	ft_r_or_rr_a(t_stack **a, t_data **data, int the_way)
 		ft_while_rra(a, data);
 }
 
-void	ft_r_or_rr_b(t_stack **b, t_data **data, int the_way)
+static void	ft_r_or_rr_b(t_stack **b, t_data **data, int the_way)
 {
 	if ((*data)->node_b->pos == 0)
 	{

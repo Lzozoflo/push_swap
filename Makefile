@@ -2,7 +2,7 @@
 
 NAME			=		push_swap
 CC				=		cc
-FLAGS			=		-Wall -Wextra -Werror -MMD -MP -O3
+CFLAGS			=		-Wall -Wextra -Werror -MMD -MP -O3
 CFLAGSS			=		-Weverything
 NPD				=		--no-print-directory
 MAKE			:=		$(MAKE) -j $(NPD)
@@ -64,7 +64,6 @@ SRC_UTILIS		=		ft_count_sort.c				\
 						ft_final_index.c			\
 						ft_free.c					\
 						ft_head_index.c				\
-						ft_three_and_more_utils.c	\
 						ft_turc_sort_utils.c
 
 

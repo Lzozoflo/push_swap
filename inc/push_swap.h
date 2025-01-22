@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/22 16:03:17 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 18:22:34 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ typedef struct s_stack
 
 typedef struct s_data
 {
-	int				count;
 	t_stack			*node_a;
 	t_stack			*node_b;
+	int				count;
 	struct s_data	*next;
 }					t_data;
 

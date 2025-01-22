@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 09:43:36 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 12:12:19 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 18:30:11 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ t_data	*ft_smallest_count(t_stack **a, t_stack **b)
 	{
 		new = ft_data_new();
 		if (!new)
+		{
+			write(2, "Error", 5);
 			exit(ft_free_all(a, b, &head));
+		}
 		if (tmp_a->final_index > min_b)
 			ft_find_head_higher_min(tmp_a, *b, new);
 		else

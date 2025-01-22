@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:57:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/22 16:13:17 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 17:02:34 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ void	ft_optimize_stack_rotation(t_stack **a, t_stack **b, t_data **data)
 	}
 	if ((*a)->final_index == (*data)->node_a->final_index
 		&& (*b)->final_index == (*data)->node_b->final_index)
-		return (ft_pb(a, b, 1));
+	{
+		ft_pb(a, b, 1);
+		return ;
+	}
 	ft_who_move(a, b, data, top_bottom);
 	ft_pb(a, b, 1);
 }
