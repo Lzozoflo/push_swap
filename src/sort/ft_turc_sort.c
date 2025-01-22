@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:57:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 13:38:56 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 16:13:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_small_head_index(t_stack *smaller, t_stack *max, t_stack **b)
 	}
 }
 
-static void	ft_max_head_index(t_stack *smaller, t_stack *max, t_stack **b)
+static void	ft_max_head_index(t_stack *max, t_stack **b)
 {
 	while ((max->pos == 1 || max->pos == 0)
 		&& (*b)->final_index != max->final_index)
@@ -53,7 +53,7 @@ static void	ft_max_on_top(t_stack **b)
 	}
 	else
 	{
-		ft_max_head_index(smaller, max, b);
+		ft_max_head_index(max, b);
 	}
 }
 
@@ -94,7 +94,7 @@ void	ft_sort_to_b(t_stack **a, t_stack **b)
 		size_a = ft_the_smallest(&data);
 		ft_optimize_stack_rotation(a, b, &data);
 		free(data);
-		if (size_a == 4)
+		if (size_a == 7)
 			break ;
 	}
 	ft_little_sort(a, b, size_a - 1);

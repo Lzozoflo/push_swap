@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:15:41 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 09:33:20 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 11:03:50 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_free_data(t_data **data)
 {
 	t_data	*tmp;
 
+	tmp = *data;
 	if (!data || !*data)
 		return ;
 	while (tmp)

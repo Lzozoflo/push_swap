@@ -2,7 +2,7 @@
 
 NAME			=		push_swap
 CC				=		cc
-FLAGS			=		-Wall -Wextra -Werror -MMD -MP
+FLAGS			=		-Wall -Wextra -Werror -MMD -MP -O3
 CFLAGSS			=		-Weverything
 NPD				=		--no-print-directory
 MAKE			:=		$(MAKE) -j $(NPD)
@@ -55,7 +55,7 @@ SRC_INSTRUC		=		ft_push.c					\
 						ft_while_rotate.c
 
 SRC_SORT		=		ft_first_last_move.c		\
-						ft_three_four_five.c		\
+						ft_three_and_more.c			\
 						ft_turc_sort.c
 
 SRC_UTILIS		=		ft_count_sort.c				\
@@ -64,7 +64,7 @@ SRC_UTILIS		=		ft_count_sort.c				\
 						ft_final_index.c			\
 						ft_free.c					\
 						ft_head_index.c				\
-						ft_three_four_five_utils.c	\
+						ft_three_and_more_utils.c	\
 						ft_turc_sort_utils.c
 
 
@@ -159,10 +159,5 @@ clear			:	clean
 
 f				:	fclean
 fclear			:	fclean
-
-
-#to see what variables did
-debug			:
-	make all CFLAGS=$(CFLAGSS)
 
  -include $(DEPS)

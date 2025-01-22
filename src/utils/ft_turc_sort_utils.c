@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:32:48 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 13:38:56 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 11:05:18 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_equal_or_not(t_stack **a, t_stack **b, t_data **data)
 	return (1);
 }
 
-void	ft_r_or_rr_a(t_stack **a, t_stack **b, t_data **data, int the_way)
+void	ft_r_or_rr_a(t_stack **a, t_data **data, int the_way)
 {
 	if ((*data)->node_a->pos == 0)
 	{
@@ -36,7 +36,7 @@ void	ft_r_or_rr_a(t_stack **a, t_stack **b, t_data **data, int the_way)
 		ft_while_rra(a, data);
 }
 
-void	ft_r_or_rr_b(t_stack **a, t_stack **b, t_data **data, int the_way)
+void	ft_r_or_rr_b(t_stack **b, t_data **data, int the_way)
 {
 	if ((*data)->node_b->pos == 0)
 	{
@@ -54,9 +54,9 @@ void	ft_r_or_rr_b(t_stack **a, t_stack **b, t_data **data, int the_way)
 void	ft_who_move(t_stack **a, t_stack **b, t_data **data, int the_way)
 {
 	if ((*a)->final_index != (*data)->node_a->final_index)
-		ft_r_or_rr_a(a, b, data, the_way);
+		ft_r_or_rr_a(a, data, the_way);
 	if ((*b)->final_index != (*data)->node_b->final_index)
-		ft_r_or_rr_b(a, b, data, the_way);
+		ft_r_or_rr_b(b, data, the_way);
 }
 
 t_stack	*ft_find_smaller(t_stack **b)

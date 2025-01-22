@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 13:40:03 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 15:30:23 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ static int	ft_digit_sign(char *str)
 				return (0);
 		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (1);
 }
@@ -72,6 +70,7 @@ static int	ft_cheak_dup(t_stack **head, char *tab)
 		if (tmp->content == node->content)
 		{
 			ft_push_clear(head, &ft_delete_content);
+			free(node);
 			return (0);
 		}
 		tmp = tmp->next;
@@ -117,6 +116,8 @@ int	main(int ac, char **av)
 		return (1);
 	if (!ft_creat_stack(ac, av, &head_a))
 		return (ft_free_stack(&head_a, 1));
+	if (ft_little_sort(&head_a, &head_b, ft_push_size(head_a)))
+		return (ft_free_stack(&head_a, 0));
 	ft_first_move(&head_a, &head_b);
 	ft_sort_to_b(&head_a, &head_b);
 	ft_last_move(&head_a, &head_b);

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/15 13:44:25 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/22 16:03:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ typedef struct s_data
 }					t_data;
 
 // //trash fonction
-// void	ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b);
-// void	ft_print_two_stack(t_stack *a, t_stack *b);
-// void	ft_print_data(t_data data);
-// void	ft_bcl_p_data(t_data *data);
+void	ft_test_to_print_lst(t_stack	**head_a, t_stack **head_b);
+void	ft_print_two_stack(t_stack *a, t_stack *b);
+void	ft_print_data(t_data data);
+void	ft_bcl_p_data(t_data *data);
 
-//----------------------------Directorie >>> .instructions/
+//----------------------------Directory >>> .instructions/
 //		ft_swap
 void	ft_sa(t_stack **a, int print);
 void	ft_sb(t_stack **b, int print);
@@ -72,22 +72,19 @@ void	ft_while_rb(t_stack **b, t_data **data);
 void	ft_while_rra(t_stack **a, t_data **data);
 void	ft_while_rrb(t_stack **b, t_data **data);
 
-//----------------------------Directorie >>> .sort/
+//----------------------------Directory >>> .sort/
 //		ft_first_last_move
 void	ft_first_move(t_stack **a, t_stack **b);
 void	ft_last_move(t_stack **a, t_stack **b);
 
 //		ft_three_four_five
-void	ft_sort_three(t_stack **a);
-void	ft_sort_five(t_stack **a, t_stack **b);
-void	ft_little_sort(t_stack **a, t_stack **b, int len);
-void	ft_mouve_min(t_stack **a, t_stack **b, int min_i);
+int		ft_little_sort(t_stack **a, t_stack **b, int len);
 
 //		ft_turc_sort
 void	ft_optimize_stack_rotation(t_stack **a, t_stack **b, t_data **data);
 void	ft_sort_to_b(t_stack **a, t_stack **b);
 
-//----------------------------Directorie >>> .utils/
+//----------------------------Directory >>> .utils/
 //		ft_count_sort
 t_data	*ft_smallest_count(t_stack **a, t_stack **b);
 int		ft_the_smallest(t_data **data);
@@ -115,10 +112,6 @@ int		ft_free_all(t_stack **a, t_stack **b, t_data **data);
 
 //		ft_head_index
 void	ft_add_utils(t_stack *a, t_stack *b);
-
-//		ft_three_four_five_utils
-int		ft_find_index_min(t_stack *a, int *index_min);
-void	ft_find_index_second_min(t_stack *a, int min1, int *index_min);
 
 //		ft_turc_sort_utils
 int		ft_equal_or_not(t_stack **a, t_stack **b, t_data **data);
