@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re f fclear c clear lib
+.PHONY: all clean fclean re f fclear c clear lib run
 
 NAME			=		push_swap
 CC				=		cc
@@ -113,6 +113,9 @@ all				:	lib
 			$(MAKE) $(NAME)
 			$(MAKE) $(D_OBJ)
 
+# run				:
+# 			./error/push_swap_tester/complexity -s 268767908 -f ./push_swap $(NBR) 1000 5500 ./error/push_swap_tester/checker
+
 $(NAME)			:	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(NAME_LIB) -o $(NAME)
 
@@ -148,7 +151,7 @@ re 				:	 fclean all
 
 #############################################################################################
 #																							#
-#										Allias									#
+#										Allias												#
 #																							#
 #############################################################################################
 

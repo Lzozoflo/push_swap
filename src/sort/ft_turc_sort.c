@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:57:55 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/22 17:02:34 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/24 11:22:06 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ft_sort_to_b(t_stack **a, t_stack **b)
 		size_a = ft_the_smallest(&data);
 		ft_optimize_stack_rotation(a, b, &data);
 		free(data);
-		if (size_a == 7)
+		if (size_a <= 7)
 			break ;
 	}
 	ft_little_sort(a, b, size_a - 1);

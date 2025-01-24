@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/22 18:46:32 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/24 10:58:50 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,15 @@ static int	ft_av_correct_input(int ac, char **av)
 
 	i = 0;
 	if (ac == 1)
+	{
+		write(2, "Error\n", 6);
 		return (0);
+	}
 	while (--ac > 0)
 	{
 		if (!ft_digit_sign(av[ac]))
 		{
-			write(2, "Error", 5);
+			write(2, "Error\n", 6);
 			return (0);
 		}
 	}
@@ -119,7 +122,7 @@ int	main(int ac, char **av)
 		return (1);
 	if (!ft_creat_stack(ac, av, &head_a))
 	{
-		write(2, "Error", 5);
+		write(2, "Error\n", 6);
 		return (ft_free_stack(&head_a, 1));
 	}
 	if (ft_little_sort(&head_a, &head_b, ft_push_size(head_a)))
