@@ -113,9 +113,6 @@ all				:	lib
 			$(MAKE) $(NAME)
 			$(MAKE) $(D_OBJ)
 
-# run				:
-# 			./error/push_swap_tester/complexity -s 268767908 -f ./push_swap $(NBR) 1000 5500 ./error/push_swap_tester/checker
-
 $(NAME)			:	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(NAME_LIB) -o $(NAME)
 
@@ -145,6 +142,7 @@ fclean 			:
 			$(RM) $(NAME)
 			$(RM) $(D_OBJ)
 			$(MAKE) -C libft fclean
+
 
 re 				:	 fclean all
 
