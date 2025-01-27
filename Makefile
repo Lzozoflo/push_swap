@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re f fclear c clear lib run
+.PHONY: all clean fclean re f fclear c clear lib
 
 NAME			=		push_swap
 CC				=		cc
@@ -116,11 +116,9 @@ all				:	lib
 $(NAME)			:	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(NAME_LIB) -o $(NAME)
 
-
 $(D_OBJ)%.o		:	$(D_SRC)%.c $(INCS) Makefile
 			@mkdir -p $(dir $@)
 			$(CC) $(CFLAGS) -c $< -o $@ -I $(D_INC) -I $(D_INC_LIBFT)
-
 
 lib				:
 			$(MAKE) -C libft
