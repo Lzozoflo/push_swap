@@ -123,6 +123,8 @@ $(D_OBJ)%.o		:	$(D_SRC)%.c $(INCS) Makefile
 lib				:
 			$(MAKE) -C libft
 
+run				:
+			/home/fcretin/1project/milestone_2/push_swap/error/push_swap_tester/complexity -s 268767908 -f ./push_swap $(NBR) 1000 700 /home/fcretin/1project/milestone_2/push_swap/error/push_swap_tester/checker
 
 #############################################################################################
 #																							#

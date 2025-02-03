@@ -6,33 +6,20 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/24 10:58:50 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/02/03 09:55:19 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static int	ft_digit_sign(char *str)
+int	ft_sorted(t_stack *a)
 {
-	char	*start;
-
-	start = str;
-	while (*str)
+	while (a->next)
 	{
-		if (ft_isdigit(*str))
-			str++;
-		else if (*str == ' ')
-			str++;
-		else if (*str == '-' || *str == '+')
-		{
-			if (ft_isdigit(*(str + 1)) && (str == start || *(str - 1) == ' '))
-				str++;
-			else
-				return (0);
-		}
-		else
+		if (!(a->final_index < a->next->final_index))
 			return (0);
+		a = a->next;
 	}
 	return (1);
 }
@@ -44,7 +31,7 @@ static int	ft_av_correct_input(int ac, char **av)
 	i = 0;
 	if (ac == 1)
 	{
-		write(2, "Error\n", 6);
+		write(2, "Error2\n", 6);
 		return (0);
 	}
 	while (--ac > 0)
@@ -81,19 +68,21 @@ static int	ft_cheak_dup(t_stack **head, char *tab)
 		}
 		tmp = tmp->next;
 	}
-	ft_push_add_front(head, node);
+	ft_push_add_back(head, node);
 	return (1);
 }
 
 static t_stack	**ft_creat_stack(int ac, char **av, t_stack	**head)
 {
 	int		i;
+	int		j;
 	char	**tab;
 
+	j = 1;
 	tab = NULL;
-	while (--ac > 0)
+	while (j < ac)
 	{
-		tab = ft_split(av[ac], ' ');
+		tab = ft_split(av[j++], ' ');
 		if (!tab)
 			return (NULL);
 		i = 0;
@@ -125,6 +114,8 @@ int	main(int ac, char **av)
 		write(2, "Error\n", 6);
 		return (ft_free_stack(&head_a, 1));
 	}
+	if (ft_sorted(head_a))
+		return (0);
 	if (ft_little_sort(&head_a, &head_b, ft_push_size(head_a)))
 		return (ft_free_stack(&head_a, 0));
 	ft_first_move(&head_a, &head_b);

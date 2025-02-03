@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:03:28 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/24 10:58:12 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/27 15:30:41 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ t_data	*ft_data_new(void);
 void	ft_data_add_back(t_data **lst, t_data *new);
 
 //		ft_creat_stack
-void	ft_push_add_front(t_stack **lst, t_stack *new);
 t_stack	*ft_push_new(char *str);
 t_stack	*ft_push_last(t_stack *lst);
+void	ft_push_add_back(t_stack **lst, t_stack *new);
 void	ft_push_clear(t_stack **lst, void (*del)(int));
 int		ft_push_size(t_stack *lst);
 
