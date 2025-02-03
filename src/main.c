@@ -6,12 +6,12 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/02/03 10:27:36 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/02/03 16:09:33 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft.h"
+#include "push_swap.h"
 
 int	ft_sorted(t_stack *a)
 {
@@ -72,7 +72,7 @@ static int	ft_cheak_dup(t_stack **head, char *tab)
 	return (1);
 }
 
-static t_stack	**ft_creat_stack(int ac, char **av, t_stack	**head)
+static t_stack	**ft_creat_stack(int ac, char **av, t_stack **head)
 {
 	int		i;
 	int		j;
@@ -115,7 +115,7 @@ int	main(int ac, char **av)
 		return (ft_free_stack(&head_a, 1));
 	}
 	if (ft_sorted(head_a))
-		return (0);
+		return (ft_free_stack(&head_a, 0));
 	if (ft_little_sort(&head_a, &head_b, ft_push_size(head_a)))
 		return (ft_free_stack(&head_a, 0));
 	ft_first_move(&head_a, &head_b);
