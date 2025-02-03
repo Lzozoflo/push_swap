@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/02/03 09:55:19 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/02/03 10:27:36 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_av_correct_input(int ac, char **av)
 	i = 0;
 	if (ac == 1)
 	{
-		write(2, "Error2\n", 6);
+		write(2, "Error\n", 6);
 		return (0);
 	}
 	while (--ac > 0)
