@@ -6,14 +6,14 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/02/03 16:09:33 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/02/05 16:58:28 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	ft_sorted(t_stack *a)
+static int	ft_sorted(t_stack *a)
 {
 	while (a->next)
 	{
@@ -34,6 +34,8 @@ static int	ft_av_correct_input(int ac, char **av)
 		write(2, "Error\n", 6);
 		return (0);
 	}
+	if (ft_no_input(av))
+		return (0);
 	while (--ac > 0)
 	{
 		if (!ft_digit_sign(av[ac]))
@@ -90,11 +92,11 @@ static t_stack	**ft_creat_stack(int ac, char **av, t_stack **head)
 		{
 			if (!ft_cheak_dup(head, tab[i++]))
 			{
-				ft_free_the_malloc(tab, 0);
+				ft_freetab(tab, 0);
 				return (NULL);
 			}
 		}
-		ft_free_the_malloc(tab, 0);
+		ft_freetab(tab, 0);
 	}
 	ft_add_final_index(*head);
 	return (head);

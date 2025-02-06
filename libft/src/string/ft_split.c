@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:34:46 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/10 18:14:49 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/01/28 12:31:22 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	ft_len_word(const char *str, char c)
 /**
  * @brief Frees the memory allocated for an array of strings.
  *
- * The `ft_free_the_malloc` function frees each string in the array `str`
+ * The `ft_freetab` function frees each string in the array `str`
  * up to the index `j`, and then frees the array itself. It is used to free
  * memory in case of an error during memory allocation in `ft_split`.
  *
@@ -79,7 +79,7 @@ static int	ft_len_word(const char *str, char c)
  * @param j The number of strings to free before returning `NULL`.
  * @return char** Always `NULL` after freeing the memory.
  */
-char	**ft_free_the_malloc(char **tab, unsigned int j)
+char	**ft_freetab(char **tab, unsigned int j)
 {
 	unsigned int	i;
 
@@ -128,7 +128,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		str[i] = ft_substr(s, 0, ft_len_word(s, c));
 		if (!str[i])
-			return (ft_free_the_malloc(str, i));
+			return (ft_freetab(str, i));
 		s = s + ft_len_word(s, c);
 		i++;
 	}

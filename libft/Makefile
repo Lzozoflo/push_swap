@@ -27,6 +27,7 @@ D_SRC			=		src/
 D_OBJ			=		object/
 D_INC			=		./inc/
 
+
 # Source Directories
 D_IS			=		is/
 D_LST			=		lst/
@@ -46,7 +47,8 @@ D_UTILITY		=		utility/
 INC				=		libft.h
 
 
-SRC_IS			=		ft_isalnum.c		\
+SRC_IS			=		ft_is_space.c		\
+						ft_isalnum.c		\
 						ft_isalpha.c		\
 						ft_isascii.c		\
 						ft_isdigit.c		\
@@ -124,7 +126,6 @@ SRCS			=		$(addprefix $(D_SRC), $(SRC))						\
 
 # Changing all source directories to object directories
 OBJS			=		$(subst $(D_SRC), $(D_OBJ), $(SRCS:.c=.o))
-D_OBJS			=		$(subst $(D_SRC), $(D_OBJ), $(SRCS))
 DEPS			=		$(SRCS:%.c=%.d)
 
 INCS			=		$(addprefix $(D_INC), $(INC))

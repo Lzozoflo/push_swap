@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2025/01/27 14:45:01 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/02/05 16:56:42 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_list
 }					t_list;
 
 // is Directorie
+int			ft_is_white_space(int c);
+int			ft_no_input(char **av);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
@@ -72,7 +74,7 @@ ssize_t		ft_putstr(char *s);
 
 // string Directorie
 char		**ft_split(char const *s, char c);
-char		**ft_free_the_malloc(char **tab, unsigned int j);
+char		**ft_freetab(char **tab, unsigned int j);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strdup(const char *src);
 void		ft_striteri(char *str, void (*f)(unsigned int, char *));
