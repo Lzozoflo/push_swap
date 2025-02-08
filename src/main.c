@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:45:15 by fcretin           #+#    #+#             */
-/*   Updated: 2025/02/05 16:58:28 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/02/08 17:37:35 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ static int	ft_av_correct_input(int ac, char **av)
 		return (0);
 	}
 	if (ft_no_input(av))
+	{
+		write(2, "Error\n", 6);
 		return (0);
+	}
 	while (--ac > 0)
 	{
 		if (!ft_digit_sign(av[ac]))
